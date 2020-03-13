@@ -11,10 +11,7 @@ const Layout = ({children, onHideNav, onShowNav, showNav, siteTitle}) => (
     <footer className={styles.footer}>
       <div className={styles.footerWrapper}>
         <div className={styles.siteInfo}>
-          &copy; {new Date().getFullYear()}, Built with <a href='https://www.sanity.io'>Sanity</a>{' '}
-          &amp;
-          {` `}
-          <a href='https://www.gatsbyjs.org'>Gatsby</a>
+          &copy; {new Date().getFullYear()}, {siteTitle} &mdash; About scary sh*t that go bump in the night.
         </div>
       </div>
     </footer>

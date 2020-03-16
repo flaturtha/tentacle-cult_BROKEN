@@ -10,6 +10,7 @@ import Container from '../components/container'
 import GraphQLErrorList from '../components/graphql-error-list'
 import SEO from '../components/seo'
 import Layout from '../containers/layout'
+import fullscreenLogo from "../img/logo_fullscreen.png"
 
 export const query = graphql`
   fragment SanityImage on SanityMainImage {
@@ -104,7 +105,7 @@ const IndexPage = props => {
         keywords={site.keywords}
       />
       <Container>
-        <img src="img/logo_fullscreen.png" style={fullscreen} />
+        <img src={fullscreenLogo} alt="Tentacle Cult (logo)" style={fullscreen} />
       </Container>
     </Layout>
   )

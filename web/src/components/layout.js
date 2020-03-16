@@ -4,8 +4,14 @@ import Header from './header'
 import '../styles/layout.css'
 import styles from './layout.module.css'
 
+import favicon from '../img/favicon.ico'
+import Helmet from 'react-helmet'
+
 const Layout = ({children, onHideNav, onShowNav, showNav, siteTitle}) => (
   <>
+    <Helmet>
+      <link rel="icon" href={favicon} />
+    </Helmet>
     <Header siteTitle={siteTitle} onHideNav={onHideNav} onShowNav={onShowNav} showNav={showNav} />
     <div className={styles.content}>{children}</div>
     <footer hidden className={styles.footer}>

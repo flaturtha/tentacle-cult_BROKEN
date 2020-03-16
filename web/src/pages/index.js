@@ -88,6 +88,14 @@ const IndexPage = props => {
     )
   }
 
+  const fullscreen = {
+    display: "block",
+    marginLeft: "auto",
+    marginRight: "auto",
+    marginTop: "25vh",
+    height: "50vh"
+  };
+
   return (
     <Layout>
       <SEO
@@ -96,15 +104,7 @@ const IndexPage = props => {
         keywords={site.keywords}
       />
       <Container>
-        <h1>Welcome to the {site.title}</h1>
-        <p>&hellip; where I pontificate on all things that <em>go bump in the night</em>. And share my creature feature writing process. Even the bad sh*t!</p>
-        {postNodes && (
-          <BlogPostPreviewList
-            title='Latest blog posts'
-            nodes={postNodes}
-            browseMoreHref='/archive/'
-          />
-        )}
+        <img src="img/logo_fullscreen.png" style={fullscreen} />
       </Container>
     </Layout>
   )

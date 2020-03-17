@@ -5,11 +5,13 @@ import {cn} from '../lib/helpers'
 
 import styles from './header.module.css'
 
+import siteLogo from '../img/site-logo.png'
+
 const Header = ({onHideNav, onShowNav, showNav, siteTitle}) => (
-  <div hidden className={styles.root}>
+  <div className={styles.root}>
     <div className={styles.wrapper}>
       <div className={styles.branding}>
-        <Link to='/'>{siteTitle}</Link>
+        <Link to='/'><img src={siteLogo} alt="Tentacle Cult (logo)" /></Link>
       </div>
 
       <button className={styles.toggleNavButton} onClick={showNav ? onHideNav : onShowNav}>
@@ -19,7 +21,10 @@ const Header = ({onHideNav, onShowNav, showNav, siteTitle}) => (
       <nav className={cn(styles.nav, showNav && styles.showNav)}>
         <ul>
           <li>
-            <Link to='/archive/'>Archive</Link>
+            <Link to='/about/'>About</Link>
+            <Link to='/scripts/'>Scripts</Link>
+            <Link to='/blog/'>Blog</Link>
+            <Link to='/hire/'>Hire Me</Link>
           </li>
         </ul>
       </nav>

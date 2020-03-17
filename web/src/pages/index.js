@@ -93,9 +93,15 @@ const IndexPage = props => {
     display: "block",
     marginLeft: "auto",
     marginRight: "auto",
-    marginTop: "25vh",
+    marginTop: "10vh",
     height: "50vh"
   };
+
+  const center = {
+    textAlign: "center",
+    marginTop: "2rem",
+    fontSize: "1.5rem"
+  }
 
   return (
     <Layout>
@@ -106,6 +112,7 @@ const IndexPage = props => {
       />
       <Container>
         <img src={fullscreenLogo} alt="Tentacle Cult (logo)" style={fullscreen} />
+        <h1 style={center}>{site.description}</h1>
       </Container>
     </Layout>
   )

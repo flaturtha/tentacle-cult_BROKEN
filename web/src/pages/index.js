@@ -10,6 +10,7 @@ import Container from '../components/container'
 import GraphQLErrorList from '../components/graphql-error-list'
 import SEO from '../components/seo'
 import Layout from '../containers/layout'
+
 import fullscreenLogo from "../img/logo_fullscreen.png"
 
 export const query = graphql`
@@ -112,7 +113,7 @@ const IndexPage = props => {
       />
       <Container>
         <img src={fullscreenLogo} alt="Tentacle Cult (logo)" style={fullscreen} />
-        <h1 style={center}>{site.description}</h1>
+        {/* <h1 style={center}>{site.description}</h1> */}
       </Container>
     </Layout>
   )

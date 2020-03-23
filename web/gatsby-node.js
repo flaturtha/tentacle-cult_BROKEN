@@ -7,7 +7,7 @@ const {isFuture} = require('date-fns')
 
 const {format} = require('date-fns')
 
-async function createBlogPostPages (graphql, actions) {
+async function createBlogPostPages (graphql, actions, reporter) {
   const {createPage} = actions
   const result = await graphql(`
     {
@@ -38,6 +38,8 @@ async function createBlogPostPages (graphql, actions) {
       const dateSegment = format(publishedAt, 'YYYY/MM')
       const path = `/blog/${dateSegment}/${slug.current}/`
 
+      reporter.info(`Creating blog post page: ${path}`)
+
       createPage({
         path,
         component: require.resolve('./src/templates/blog-post.js'),
@@ -46,6 +48,14 @@ async function createBlogPostPages (graphql, actions) {
     })
 }
 
-exports.createPages = async ({graphql, actions}) => {
-  await createBlogPostPages(graphql, actions)
+exports.createPages = async ({graphql, actions, reporter}) => {
+  await createBlogPostPages(graphql, actions, reporter)
+}
+exports.onCreateWebpackConfig = ({actions, getConfig}) => {
+  // Hack due to Tailwind ^1.1.0 using `reduce-css-calc` which assumes node
+  // https://github.com/bradlc/babel-plugin-tailwind-components/issues/39#issuecomment-526892633
+  const config = getConfig()
+  config.node = {
+    fs: 'empty'
+  }
 }

@@ -70,4 +70,5 @@ yarn.lock
 # Secrets
 .env.development
 
-.linaria-cache
+# Linaria files
+.linaria-cache/

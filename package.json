@@ -20,7 +20,7 @@
   },
   "dependencies": {
     "gatsby-plugin-linaria": "^2.0.0",
-    "gatsby-plugin-postcss": "^2.2.0",
+    "gatsby-plugin-postcss": "^6.3.0",
     "linaria": "^1.3.3"
   }
 }
